@@ -18,7 +18,9 @@ export default class ShoppingCart extends Component<
   }
 
   handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    this.setState({ isOpen: !this.state.isOpen });
+    if ((e.target as HTMLElement).nodeName === 'SPAN') {
+      this.setState({ isOpen: !this.state.isOpen });
+    }
   };
 
   render() {
